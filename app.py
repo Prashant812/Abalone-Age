@@ -22,7 +22,7 @@ def predict():
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
-    
+
     data = request.get_json(force=True)
     prediction = model.predict([np.array(list(data.values()))])
 
