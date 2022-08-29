@@ -7,7 +7,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('recommend.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -18,7 +18,16 @@ def predict():
 
     output = round(prediction[0])
 
-    return render_template('index.html', prediction_text='Abalone age should be  {}'.format(output))
+
+    return render_template('recommend.html',
+                           Length = int_features[0],
+                           Diameter = int_features[1],
+                           Height = int_features[2],
+                           Whole_weight = int_features[3],
+                           Shucked_weight = int_features[4],
+                           Viscera_weight = int_features[5],
+                           Shell_weight = int_features[6],
+                           prediction_text='Abalone age should be  {}'.format(output))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abalone's Age</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand mb-0 h1" href="/">Abalone's Age Predictor</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link"  href="https://github.com/Prashant812/Abalone-Age">Github</a>
+        </li>
+  </div>
+</nav>
+ <div class = "container my-4">
+    <center><h1>Abalone's Age Predictor</h1></center>
+    <center><p>Fill the appropriate values</p></center>
+</div>
+ <br>
+ <div class="login">
+    <center><form action="/predict"method="POST">
+    	<input type="text" name="1st" placeholder="Length" required="required" />
+        <input type="text" name="2nd" placeholder="Diameter" required="required" />
+        <input type="text" name="3rd" placeholder="Height" required="required" />
+        <input type="text" name="4th" placeholder="Whole weight" required="required" />
+        <input type="text" name="5th" placeholder="Shucked weight" required="required" />
+        <input type="text" name="6th" placeholder="Viscera weight" required="required" />
+        <input type="text" name="7th" placeholder="Shell weight" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form></center>
+
+   <br>
+   <br>
+   <center><h5>For following input values </h5></center>
+     <center><h6>Length - {{Length}}</h6></center>
+     <center><h6>Diameter - {{Diameter}}</h6></center>
+     <center><h6>Height - {{Height}}</h6></center>
+     <center><h6>Whole Weight - {{Whole_weight}}</h6></center>
+     <center><h6>Shucked Weight - {{Shucked_weight}}</h6></center>
+     <center><h6>Viscera Weight- {{Viscera_weight}}</h6></center>
+     <center><h6>Shell Weight- {{Shell_weight}}</h6></center>
+   <br>
+
+   <center><h3>{{ prediction_text }}</h3></center>
+
+
+
+
+ </div>
+
+</body>
+</html>
